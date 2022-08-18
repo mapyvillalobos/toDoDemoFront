@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+//importar rutas a utilizar
+import routes from "./config/routes";
+import {Routes, Route} from 'react-router-dom'; 
+
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+<Routes>
+  {routes().map(({path, element}, index_route)=> <Route key = {path} {...{path, element}}  />)}
+</Routes>
     </div>
   );
 }
