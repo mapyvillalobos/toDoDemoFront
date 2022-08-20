@@ -1,5 +1,5 @@
 //importar mis pages
-import AuthPage from '../pages/AuthPage' //chafa v1
+import { ProfilePage, AuthPage } from '../pages'
 
 
 const routes = (props) => {
@@ -11,14 +11,18 @@ const routes = (props) => {
         },
         {
             path: "/login", //login
-            element: <AuthPage />
+            element: <AuthPage {...props} />
         },
         {
             path: "/signup", //login
-            element: <AuthPage />
+            element: <AuthPage {...props} />
+        },
+        {
+            path: "/profile", //profile
+            element: <ProfilePage {...props} />
         }
     ]
 
 }
 
-export default routes 
+export default routes
